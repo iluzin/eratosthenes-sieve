@@ -4,7 +4,7 @@ def eratosthenes_sieve(limit):
         step = primes[i]
         if not step:
             continue
-        i += step
+        i += step * (step >> 1)
         if i >= len(primes):
             break
         for j in range(i, len(primes), step):
